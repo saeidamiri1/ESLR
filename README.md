@@ -1,6 +1,3 @@
-# ESLR
-ESRL: Ensemble SVD-regularized learning to achieve high dimensional clustering
-
 # ESRL: Ensemble SVD-regularized 
 Clustering is an unsupervised technique to find underlying structure in a dataset by grouping
 data points into subsets that are as homogeneous as possible, clustering is a widely used unsupervised technique for identifying natural classes within a set of data. [Amiri et al. (2020)]() proposed a clustering technique for general clustering problems which provide a kind of dissimilarity. The proposed is fully nonparametric and it generates clusters for a given desired number of clusters K. They also discussed estimating the size of cluster.
@@ -8,14 +5,13 @@ data points into subsets that are as homogeneous as possible, clustering is a wi
 ## Contents
 1. [ESRL](#esrl)
 2. [Data set](#datasets)
- - [GARBER data]()
- - [Scale the data]()
+ - [GARBER data](#garber-data)
+ - [Scale the data](#scale-the-data)
 3. [How to rung](#how-to-run)
 5. [References](#references)
 
 # ESRL
 We implemented the methods discussed Amiri et al. (2020) in R and uploaded in Github. To load the codes in R, run the following script.
-
 ```
 library("RCurl")
 script <- getURL("https://raw.githubusercontent.com/saeidamiri1/ESLR/master/RCode/ESRL.R", ssl.verifypeer = FALSE)
@@ -86,7 +82,7 @@ CLUS<-as.dist(CLUS)
 
 The dendrogram can be also plotted,
 ```
-plot(hclust(CLUS),h=-1)
+plot(hclust(CLUS, method="average"),h=-1)
 ```
 
 # References
