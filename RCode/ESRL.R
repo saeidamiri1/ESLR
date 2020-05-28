@@ -38,7 +38,7 @@ cl <- makeCluster(detectCores()-1)
 registerDoParallel(cl) 
 ens = foreach(i = 1:B,
               .combine = "rbind") %dopar% {
-                fit1 <- sub_ESRL(x,knmin,knmax)
+                fit1 <- sub_ESRL(x,rmin,rmax)
                 fit1
               }
 stopCluster(cl)
