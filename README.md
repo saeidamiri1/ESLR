@@ -16,8 +16,9 @@ data points into subsets that are as homogeneous as possible, clustering is a wi
 # ESRL
 We implemented the methods discussed Amiri et al. (2020) in R and uploaded in Github. To load the codes in R, run the following script.
 
- ```
-script <- getURL("https://raw.githubusercontent.com/saeidamiri1/ESLR/blob/Rcode/ESRL.R", ssl.verifypeer = FALSE)
+```
+library("RCurl")
+script <- getURL("https://raw.githubusercontent.com/saeidamiri1/ESLR/master/RCode/ESRL.R", ssl.verifypeer = FALSE)
 eval(parse(text = script))
  ```
 The ```ESRL()``` provides the dissimiliary matrix
@@ -79,7 +80,7 @@ library("doParallel")
 Once the data and the codes are loaded in R, the clustering can be obtained using the following script
 
 ```
-CLUS<-ESRL(X_g,B=2000,rmin=0.5,rmax=0.85)
+CLUS<-ESRL(X_g,rmin=0.5,rmax=0.85,B=2000)
 CLUS<-as.dist(CLUS)
 ```
 
@@ -89,7 +90,7 @@ plot(hclust(CLUS),h=-1)
 ```
 
 # References
-Amiri, S., Saunier, N. (2020). (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering . ([pdf](), [journal]())
+Amiri, S., Saunier, N. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering . ([pdf](), [journal]())
 
 ### License
 Copyright (c) 2020 Saeid Amiri

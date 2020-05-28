@@ -4,7 +4,7 @@ sub_ESRL<-function(X0,rmin,rmax){
   K0 <- sample(2:(n/3 - 2), 1)
   r01 <- unique(sample(ncol(X0), replace = TRUE))
   X01 <- X0[, r01]
-  s <- svd(X1)
+  s <- svd(X01)
   D <- diag(s$d)
   cu<-cumsum(s$d)/sum(s$d)
   bb<-runif(1,min=rmin, max=rmax)
@@ -16,6 +16,20 @@ sub_ESRL<-function(X0,rmin,rmax){
   }
  return(kmeans(rec0,K0)$cluster)
 }
+
+hammingD<-DistM<-function(dat){
+  Len<-dim(dat)
+  ss<-Len[1]
+  dismat<- matrix(1,ncol=ss,ss)
+  for(i in 1:ss){
+    if (i==ss) break
+    for(j in (i:ss)){
+      dismat[i,j]<-mean(dat[i,]==dat[j,],na.rm=T)
+    }
+  }
+  return(1-t(dismat))
+}
+
 
 require("doParallel", character.only = T)
 require("foreach", character.only = T)
@@ -30,18 +44,7 @@ ens = foreach(i = 1:B,
 stopCluster(cl)
 
 
-hammingD<-DistM<-function(dat){
-  Len<-dim(dat)
-  ss<-Len[1]
-  dismat<- matrix(1,ncol=ss,ss)
-  for(i in 1:ss){
-    if (i==ss) break
-    for(j in (i:ss)){
-      dismat[i,j]<-mean(dat[i,]==dat[j,],na.rm=T)
-    }
-  }
-  return(1-t(dismat))
-}
+
 esrl<-hammingD(t(ens))
 return(esrl)
 }
