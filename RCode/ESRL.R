@@ -42,7 +42,7 @@ hammingD<-DistM<-function(dat){
   }
   return(1-t(dismat))
 }
-esrl<-hammingD(t(ens)
+esrl<-hammingD(t(ens))
 return(esrl)
 }
 
