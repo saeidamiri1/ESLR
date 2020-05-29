@@ -48,11 +48,3 @@ def ESRL(x_dat,rmin=.50,rmax=.85,B=1000):
     h=hammingD(np.transpose(par0).T)
     return(h)    
 
-
-zz=ESRL(data_cancer,rmin=.50,rmax=.85,B=100)
-sub_ESRL(X,rmin,rmax)
-
-
-np.describe(X)
-
-X0.describe()
