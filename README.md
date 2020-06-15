@@ -144,12 +144,6 @@ X_g= scale.fit_transform(garber)
 ```
 
 ## How to run-Python
-Load the following libraries which run the computations in parallel,
-
-```
-library("foreach")
-library("doParallel")
-```
 Once the data and the codes are loaded in R, the clustering can be obtained using the following script
 
 ```
