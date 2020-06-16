@@ -1,7 +1,7 @@
 # ESRL: Ensemble SVD-regularized 
 Clustering is an unsupervised technique to find underlying structure in a dataset by grouping
-data points into subsets that are as homogeneous as possible, clustering is a widely used unsupervised technique for identifying natural classes within a set of data. [Amiri and Saunier (2020)]() proposed a clustering technique for general clustering problems which provide a kind of dissimilarity. The proposed is fully nonparametric and it generates clusters for a given desired number of clusters K. 
-We implemented the methods discussed [Amiri and Saunier (2020)]() in `R` and `Python` and uploaded in Github.
+data points into subsets that are as homogeneous as possible, clustering is a widely used unsupervised technique for identifying natural classes within a set of data. [Amiri (2020)]() proposed a clustering technique for general clustering problems which provide a kind of dissimilarity. The proposed is fully nonparametric and it generates clusters for a given desired number of clusters K. 
+We implemented the methods discussed [Amiri (2020)]() in `R` and `Python` and uploaded in Github.
 
 ## Contents
 - [ESR-R](#esrl-r)
@@ -159,7 +159,7 @@ plt.show()
 
 
 # References
-Amiri, S., Saunier, N. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering . ([pdf](), [journal]())
+Amiri, S. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering . ([pdf](), [journal]())
 
 ## License
 Copyright (c) 2020 Saeid Amiri
